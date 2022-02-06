@@ -5,10 +5,16 @@
   <meta charset="UTF-8"/>
 </head>
 <body>
-<h1> suck my dick</h1>
 <script>
+  /**
+  build an input for the user called userChoice, 
+  inputs accepted should only be rock paper or scissors.
+  */
+const userChoice = prompt("Please Enter Rock, Paper or Scissors:");
+alert (`You Chose ${userChoice}`);
+console.log('user chose', userChoice)
       /** make a function that is called computer play
- * this fuction should return at random Rock, Paper
+ * this fuction should return at random; Rock, Paper
  *  or sicssors
  */ 
 let randomChoice = Math.floor(Math.random()*100) + 1;
@@ -16,16 +22,53 @@ console.log(randomChoice)
 function computerPlay() {
    
     if (randomChoice < 33.3) {
-     console.log ("rock")
+     console.log ("SkyNet Chose Rock")
     }
     else if (randomChoice < 66.6){
-        console.log ("Paper")
+        console.log ("SkyNet Chose Paper")
     }
     else {
-        console.log("sicssors")
+        console.log("SkyNet Chose Sicssors")
     }
 }
 computerPlay()
+    /** write a function that takes the imput of the user 
+     * and compares the imput of the computer. 
+ */ 
+
+
+function compareAnswers(){
+  if (randomChoice <= 33.3, userChoice === 'rock') {
+     console.log ("Draw")
+    }
+  else if (randomChoice <= 33.3, userChoice === 'paper') {
+     console.log ("SkyNet Deactivated")
+    }
+  else if (randomChoice <= 33.3, userChoice === 'scissors') {
+     console.log ("SkyNet Wins")
+    }
+  else if (randomChoice > 33.3 , userChoice === 'paper') {
+     console.log ("Draw")
+    }
+  else if (randomChoice > 33.3, userChoice === 'scissors') {
+     console.log ("SkyNet Deactivated")
+    }
+  else if (randomChoice > 33.3, userChoice === 'rock') {
+     console.log ("SkyNet Wins")
+    }
+    else if (randomChoice > 66.6, userChoice === 'paper') {
+     console.log ("SkyNet wins")
+    }
+  else if (randomChoice > 66.6, userChoice === 'scissors') {
+     console.log ("Draw")
+    }
+  else if (randomChoice > 66.6, userChoice === 'rock') {
+     console.log ("SkyNet Deactivated")
+    }
+}
+compareAnswers()
+
+
 
   </script>
 </body>
