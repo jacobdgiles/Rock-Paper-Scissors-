@@ -10,13 +10,17 @@
   build an input for the user called userChoice, 
   inputs accepted should only be rock paper or scissors.
   */
+
 const userChoice = prompt("Please Enter Rock, Paper or Scissors:");
 alert (`You Chose ${userChoice}`);
 console.log('user chose', userChoice)
-      /** make a function that is called computer play
+
+/** make a function that is called computer play
  * this fuction should return at random; Rock, Paper
- *  or sicssors
+ *  or sicssors *** change this  to a random number between 1-3 ***
  */ 
+
+
 let randomChoice = Math.floor(Math.random()*100) + 1;
 console.log(randomChoice)
 function computerPlay() {
@@ -32,37 +36,38 @@ function computerPlay() {
     }
 }
 computerPlay()
-    /** write a function that takes the imput of the user 
-     * and compares the imput of the computer. 
+    /** write a function that takes the random number produced by the computer
+     * and the input provided by the user, use the logic of rock paper scissors 
+     * to determine the winner. 
  */ 
 
 
 function compareAnswers(){
-  if (randomChoice <= 33.3, userChoice === 'rock') {
+  if (randomChoice < 33.3 && userChoice == 'rock') {
      console.log ("Draw")
     }
-  else if (randomChoice <= 33.3, userChoice === 'paper') {
+  else if (randomChoice < 33.3 && userChoice == 'paper') {
      console.log ("SkyNet Deactivated")
     }
-  else if (randomChoice <= 33.3, userChoice === 'scissors') {
+  else if (randomChoice < 33.3 && userChoice == 'scissors') {
      console.log ("SkyNet Wins")
     }
-  else if (randomChoice > 33.3 , userChoice === 'paper') {
+  else if (randomChoice < 66.6 && userChoice == 'paper') {
      console.log ("Draw")
     }
-  else if (randomChoice > 33.3, userChoice === 'scissors') {
+  else if (randomChoice < 66.6 && userChoice == 'scissors') {
      console.log ("SkyNet Deactivated")
     }
-  else if (randomChoice > 33.3, userChoice === 'rock') {
+  else if (randomChoice < 66.6 && userChoice == 'rock') {
      console.log ("SkyNet Wins")
     }
-    else if (randomChoice > 66.6, userChoice === 'paper') {
+    else if (randomChoice >= 66.6 && userChoice == 'paper') {
      console.log ("SkyNet wins")
     }
-  else if (randomChoice > 66.6, userChoice === 'scissors') {
+  else if (randomChoice >= 66.6 && userChoice == 'scissors') {
      console.log ("Draw")
     }
-  else if (randomChoice > 66.6, userChoice === 'rock') {
+  else if (randomChoice >= 66.6 && userChoice == 'rock') {
      console.log ("SkyNet Deactivated")
     }
 }
