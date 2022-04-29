@@ -6,15 +6,39 @@
 </head>
 <body>
 <script>
+let btnClicked = ''
+const scissorsBtn = document.createElement('button')
+scissorsBtn.innerText = 'Scissors';
+scissorsBtn.addEventListener('click', () => {
+  btnClicked = 'scissors';
+playRound()
+})
+const paperBtn = document.createElement('button')
+paperBtn.innerText = 'Paper';
+paperBtn.addEventListener('click', () => {
+btnClicked = 'paper';
+playRound()
+})
+const rockBtn = document.createElement('button')
+rockBtn.innerText = 'Rock';
+rockBtn.addEventListener('click', () => {
+btnClicked = 'Rock';
+playRound()
+})
+document.body.appendChild(paperBtn)
+document.body.appendChild(rockBtn)
+document.body.appendChild(scissorsBtn)
 
-for (let i = 0; i < 5; i ++ ){
+
+console.log(btnClicked)
+function playRound(){
+
   /**
   build an input for the user called userChoice, 
   inputs accepted should only be rock paper or scissors.
   */
 function game () {
-const promptForChoice = prompt("Please Enter Rock, Paper or Scissors:");
-let userChoice = promptForChoice.toLocaleLowerCase()
+let userChoice = btnClicked.toLocaleLowerCase()
 alert (`You Chose ${userChoice}`);
 console.log('user chose', userChoice)
 
@@ -95,7 +119,7 @@ game()
 
 }
 
+
   </script>
 </body>
 </html>
-
