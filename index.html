@@ -6,7 +6,17 @@
 </head>
 <body>
 <script>
-let btnClicked = ''
+let playerScore = 0;
+let skyNetScore = 0;
+const eventsTab = document.createElement('div');
+eventsTab.innerText= 'Warning Skynet Activiated!';
+document.body.appendChild(eventsTab)
+
+const scoreCard = document.createElement('div');
+scoreCard.innerText= `Player ${playerScore} - ${skyNetScore} Skynet`;
+document.body.appendChild(scoreCard)
+
+let btnClicked = '';
 const scissorsBtn = document.createElement('button')
 scissorsBtn.innerText = 'Scissors';
 scissorsBtn.addEventListener('click', () => {
@@ -39,7 +49,8 @@ function playRound(){
   */
 function game () {
 let userChoice = btnClicked.toLocaleLowerCase()
-alert (`You Chose ${userChoice}`);
+
+eventsTab.innerText= `You Chose ${userChoice}`;
 console.log('user chose', userChoice)
 
 /** make a function that is called computer play
@@ -54,71 +65,99 @@ function computerPlay() {
    
     if (randomChoice < 33.3) {
      console.log ("SkyNet Chose Rock")
-     alert ("SkyNet Chose Rock")
+     eventsTab.innerText= "SkyNet Chose Rock"
     }
     else if (randomChoice < 66.6){
         console.log ("SkyNet Chose Paper")
-        alert ("SkyNet Chose Paper")
+        eventsTab.innerText= "SkyNet Chose Paper"
     }
     else {
         console.log("SkyNet Chose Sicssors")
-        alert ("SkyNet Chose Sicssors")
+        eventsTab.innerText= "SkyNet Chose Sicssors"
     }
 }
-computerPlay()
+setTimeout(() => {
+  computerPlay();
+}, 1000)
+
     /** write a function that takes the random number produced by the computer
      * and the input provided by the user, use the logic of rock paper scissors 
      * to determine the winner. 
  */ 
 
 
-function compareAnswers(){
+function compareAnswers()
+{
   if (randomChoice < 33.3 && userChoice == 'rock') {
      console.log ("Draw")
-     alert ("Draw")
+     eventsTab.innerText= "Draw"
     }
   else if (randomChoice < 33.3 && userChoice == 'paper') {
      console.log ("SkyNet Deactivated")
-     alert ("SkyNet Deactivated")
+     eventsTab.innerText= "SkyNet Deactivated"
+     playerScore++;
     }
   else if (randomChoice < 33.3 && userChoice == 'scissors') {
      console.log ("SkyNet Wins")
-     alert ("SkyNet Wins")
+     eventsTab.innerText=  "SkyNet Wins"
+     skyNetScore++;
     }
   else if (randomChoice < 66.6 && userChoice == 'paper') {
      console.log ("Draw")
-     alert ("Draw")
+     eventsTab.innerText= "Draw"
     }
   else if (randomChoice < 66.6 && userChoice == 'scissors') {
      console.log ("SkyNet Deactivated")
-     alert ("SkyNet Deactivated")
+     eventsTab.innerText= "SkyNet Deactivated"
+     playerScore++;
     } 
   else if (randomChoice < 66.6 && userChoice == 'rock') {
      console.log ("SkyNet Wins")
-     alert ("SkyNet Wins")
+     eventsTab.innerText= "SkyNet Wins"
+     skyNetScore++;
     }
     else if (randomChoice >= 66.6 && userChoice == 'paper') {
      console.log ("SkyNet wins")
-     alert  ("SkyNet Wins")
+     eventsTab.innerText= "SkyNet Wins"
+     skyNetScore++;
     } 
   else if (randomChoice >= 66.6 && userChoice == 'scissors') {
      console.log ("Draw")
-     alert ("Draw")
+     eventsTab.innerText= "Draw"
     }
   else if (randomChoice >= 66.6 && userChoice == 'rock') {
      console.log ("SkyNet Deactivated")
-     alert ("SkyNet Deactivated")
+     eventsTab.innerText= "SkyNet Deactivated"
+     playerScore++;
+     
+    }
+    scoreCard.innerText= `Player ${playerScore} - ${skyNetScore} Skynet`;
+
+    if (playerScore >= 5)
+    {
+      scoreCard.innerText= 'Skynet deactivited';
+    }
+    else if (skyNetScore >= 5)
+    {
+      scoreCard.innerText= 'Skynet wins';
     }
 }
-compareAnswers()
+setTimeout(() => {
+  compareAnswers();
+}, 3000)
+
 
 
   
 }
-game()
+setTimeout(() => {
+  game();
+}, 1000)
+
 
 }
-
+console.log(playerScore)
+console.log(skyNetScore)
 
   </script>
 </body>
